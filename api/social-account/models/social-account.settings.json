@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "social_accounts",
+  "info": {
+    "name": "SocialAccount"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "username": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "social_provider": {
+      "model": "social-provider"
+    },
+    "users_permissions_user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "social_accounts"
+    }
+  }
+}
